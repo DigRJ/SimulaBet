@@ -1,8 +1,10 @@
-async function removeElements (conjunto, ...unidades){
 
-    unidades.forEach(o=>{
-            conjunto.removeChild(o)
-    })
+
+const removeElements = async (conjunto, ...unidades) =>{
+
+     unidades.forEach(async o => { 
+         conjunto.removeChild(o)
         
+        })
 
 }
