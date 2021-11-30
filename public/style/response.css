@@ -1,0 +1,44 @@
+
+@media(min-width:700px){
+    
+
+    .simulationsGrid{
+        grid-template-columns: 310px  310px ;
+    }
+
+    .area{
+        width: 700px;
+    }
+
+
+}
+
+
+@media(min-width:960px){
+
+    .simulationsGrid{
+        grid-template-columns: 310px  310px 310px  ;
+    }
+
+
+}
+
+@media(min-width:1280px){
+
+    .simulationsGrid{
+        grid-template-columns: 310px  310px 310px 310px ;
+    }
+
+    
+}
+
+
+
+@media(min-width:1640px){
+
+    .simulationsGrid{
+        grid-template-columns: 310px  310px 310px 310px ;
+    }
+
+    
+}

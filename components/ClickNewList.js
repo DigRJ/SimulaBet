@@ -7,7 +7,7 @@ const clickNewList = async (elementRecept, tagBloc, tagBtn, tagList)=>{
 
         const bloc = await componente.div(tagBloc, tagBloc)
         const btn  = await componente.button(tagBtn, tagBtn)
-        btn.textContent = '(+)'
+        btn.textContent = '+'
         btn.addEventListener('click',async  ()=>  {
 
              await clickNewList(area, 'blocNewList', 'btnNewList', 'list')
@@ -22,27 +22,24 @@ const clickNewList = async (elementRecept, tagBloc, tagBtn, tagList)=>{
         
         const id   = await area.querySelectorAll(`.${tagList}`).length
         const bloc = await componente.div(tagBloc, tagBloc)
-        const List = await componente.button(tagList,id)
+        const List = await componente.div(tagList,id)
+        const name =  await componente.p('listName')
+        const day  =  await componente.p('listaDay')
 
         List.addEventListener('click', function(){
            
             /* SIMULATIONS */
 
             createdNewSimulation().then(async o=>{
-
-                  
-
-                console.log(o)
                 
                 addBlocCota(o)
 
             })
-
-
             openAndClose(simulations , 'simulations' , area)
 
         })
 
+        appendElements(true,List,name,day )
         appendElements(false,bloc,List)
         appendElements(false, elementRecept,bloc)
     }
@@ -53,7 +50,9 @@ const clickNewList = async (elementRecept, tagBloc, tagBtn, tagList)=>{
 const setNameNewSchema = async ()=>{
 
     openAndClose(areaQuestion, 'areaQuestion', area )
-   
+    let data         = new Date();
+    let dataFormated = `${data.getDate()+'/'+data.getMonth()+'/'+data.getFullYear() }`
+
 
     const tituloSetNomeSchema = await componente.p('tituloBoxSetNome')
     const inputSetNomeSchema  = await componente.input('inputSetNomeSchema')
@@ -61,7 +60,7 @@ const setNameNewSchema = async ()=>{
     const btnSetNomeExclude   = await componente.button('btnSetNomeExclude')
 
 
-    tituloSetNomeSchema.textContent = 'Insira o nome do seu novo esquema '
+    tituloSetNomeSchema.textContent = 'Insira o nome seu novo esquema'
     inputSetNomeSchema.type         = 'text'
     btnSetNomeSchema.textContent    = 'Salvar esquema'
     btnSetNomeExclude.textContent   = 'Cancelar'
@@ -69,13 +68,14 @@ const setNameNewSchema = async ()=>{
 
     btnSetNomeSchema.addEventListener('click', async ()=>{
 
-
       if(inputSetNomeSchema.value){
 
-            area.querySelectorAll('.list')[0].textContent = inputSetNomeSchema.value
+           
+           area.querySelectorAll('.list')[0].children[0].textContent = inputSetNomeSchema.value 
+           area.querySelectorAll('.list')[0].children[1].textContent = " " + dataFormated 
+
             areaQuestion.innerHTML=""  
-            openAndClose(area, 'area', areaQuestion )
-            
+            openAndClose(area, 'area', areaQuestion )            
     }})
 
 
