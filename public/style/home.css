@@ -33,10 +33,10 @@ main{
 
 
 
-.mainContent{
+.mainContent, .homeMainContent{
 
     width: 100%;
-    height: auto;
+    height: 800px;
     margin-top: 20px;
 
 }

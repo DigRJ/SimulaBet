@@ -1,11 +1,11 @@
-
+/*
  const arr = [ 
      ['titulo'], ['remove'], ['$cota'],
      ['titulo'], ['remove'], ['$cota']
      ['titulo'], ['remove'], ['$cota']
 
  ]
-
+*/
  const createdNewSimulation = async ()=>{
 
     let countSumulations =  await  document.querySelectorAll('.simulation')
