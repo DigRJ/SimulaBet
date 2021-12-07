@@ -34,18 +34,18 @@
                 <div class = 'blocContabilize' >
                     <article class = 'blocContabilizeUnion'>
                         <label class='txtContabilize'> $ : </label>
-                        <input type='number'  class='setContabilize'/>
+                        <input type='number'  class='setContabilize' disabled/>
                     </article>    
                 </div>  
 
       ` 
 
-      const simulationThis = await componente.div('simulation', `${ document.querySelectorAll('.simulation').length }`)
-      simulationThis.innerHTML += await corpo 
-      simulationsGrid.appendChild(simulationThis)
-       countSumulations =  await  document.querySelectorAll('.simulation')
-       controlAddSimulation()
-       return countSumulations.length < 1 ? simulationsGrid : countSumulations[countSumulations.length-1] 
+         const simulationThis       = await componente.div('simulation', `${ document.querySelectorAll('.simulation').length }`)
+         simulationThis.innerHTML  += await corpo 
+         simulationsGrid.appendChild(simulationThis)
+         countSumulations           =  await  document.querySelectorAll('.simulation')
+         controlAddSimulation()
+         return countSumulations.length < 1 ? simulationsGrid : countSumulations[countSumulations.length-1] 
 
 }
 
@@ -53,11 +53,9 @@
 
 async function removeSimulation(target , tag){
 
-    const s     =  simulations.querySelectorAll(`.${tag}`)
-    target      =  parseInt(target)
-    removeElements(simulations, s[target] )  
-    console.log(s)
-
+    const  getSimulation     =  simulations.querySelectorAll(`.${tag}`)
+    target                   =  parseInt(target)
+    removeElements(simulations, getSimulation[target] )  
 }
 
 
@@ -65,12 +63,8 @@ async function removeSimulation(target , tag){
 async function  addBlocCota  ( o ){
 
     const box         = await o.querySelector('.blocCota')
-    const addCota     = await componente.button('.btnAddCota')
     const blocAddCota = await o.querySelector('.blocAddCota')
-
-
- 
-
+    const addCota     = await componente.button('.btnAddCota')
 
           addCota.id          = simulations.querySelectorAll('simulation').length
           addCota.textContent = '+'
@@ -96,6 +90,7 @@ async function  addBlocCota  ( o ){
 
 
              setCota.addEventListener('input',async function(e){
+
                  const allCotas        = this.parentNode.parentNode
                  const setContabilize  = allCotas.parentNode.querySelector('.setContabilize') 
                  const getBet          = allCotas.parentNode.querySelector('.setAposta') 
@@ -141,13 +136,8 @@ removeSimulations.addEventListener('click',function(){
 
  })
 
-   
-     
-
-
-
-   
  return box
+
 }
 
 async function controlAddSimulation(){
