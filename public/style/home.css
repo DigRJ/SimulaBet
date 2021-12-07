@@ -97,6 +97,8 @@ main{
    height: 470px;
    background-color: rgba(0, 0, 0, 0.096);
    border: solid 2px rgb(75, 177, 75);
+   margin-top: 40px;
+
 
 }
 
@@ -152,7 +154,7 @@ main{
     height: 500px; 
     border: solid 2px rgb(46, 189, 89);
     background-color: whitesmoke;
-    margin-top: 10px;
+    margin-top: 40px;
 }
 
 
