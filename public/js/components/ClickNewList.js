@@ -88,8 +88,8 @@ const setNameNewSchema = async ()=>{
 
     openAndClose(areaQuestion, 'areaQuestion', area )
     let data         = new Date();
-    let dataFormated = `${data.getDate()+'/'+data.getMonth()+'/'+data.getFullYear() }`
-
+    let dataFormated = `${data.getDate()+'/'+ String( data.getMonth()+1) +'/'+data.getFullYear() }`
+    console.log(data.getMonth())
 
     const tituloSetNomeSchema = await componente.p('tituloBoxSetNome')
     const inputSetNomeSchema  = await componente.input('inputSetNomeSchema')
