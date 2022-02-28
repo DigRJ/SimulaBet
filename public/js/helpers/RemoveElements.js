@@ -1,4 +1,4 @@
-
+/*
 
 const removeElements = async (conjunto, ...unidades) =>{
   
@@ -13,3 +13,5 @@ const removeElements = async (conjunto, ...unidades) =>{
         })
    
 }
+
+*/

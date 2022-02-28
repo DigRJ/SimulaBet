@@ -1,5 +1,5 @@
 
-
+/*
 async function appendElements (type, conjunto, ...unidades){
 
     try{
@@ -22,3 +22,5 @@ async function appendElements (type, conjunto, ...unidades){
    }
 
 }
+
+*/
