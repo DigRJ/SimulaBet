@@ -84,8 +84,11 @@ async function  addBlocCota  ( o ){
 
         
             removeCota.addEventListener('click', async  function(){
-                let closedCell =  this.parentNode
+
+                let closedCell       = await  this.parentNode
                 closedCell.parentNode.removeChild(closedCell)
+
+                
              })
 
 
